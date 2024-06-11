@@ -1,0 +1,84 @@
+<%- include('./partials/head') %>
+<%- include('./partials/navigation', {current: '/overzicht'}); %>
+
+<main class="overzicht">
+  <section class="container">
+    <article class="welkom">
+      <h1>Welkom, Jeroen</h1>
+      <article>
+        <span class="bg-grijs"><h2>1</h2></span>
+        <span class="bg-grijs"><p>U heeft deze week lijn 1.</p></span>
+      </article>
+      <article>
+        <a href="/piket_planner">
+          <span class="bg-grijs">
+            <svg width="35" height="35" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M26 14.5001V37.5001M14.5 26.0001H37.5" stroke="#003D86" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M26 49C38.7025 49 49 38.7025 49 26C49 13.2975 38.7025 3 26 3C13.2975 3 3 13.2975 3 26C3 38.7025 13.2975 49 26 49Z" stroke="#003D86" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+        <span class="bg-grijs"><p>Plan uw volgende dienst in.</p></span>
+      </article>
+    </article>
+    <article class="diensten">
+      <h2>Opkomende <br> Diensten</h2>
+      <div class="bg-grijs">
+        <div class="">
+          <h5>Maandag</h5>
+          <p>2, Sept - 7, Sept</p>
+        </div>
+        <span class="bg-wit"><h3>3</h3></span>
+      </div>
+      <div class="bg-grijs">
+        <div class="">
+          <h5>Maandag</h5>
+          <p>3, Dec - 8, Dec</p>
+        </div>
+        <span class="bg-wit"><h3>2</h3></span>
+      </div>
+    </article>
+    <article class="kalender-buttons">
+      <div>
+        <h2 class="month"></h2>
+      </div>
+      <div>
+        <button class="prev"><</button>
+        <button class="today">Today</button>
+        <button class="next">></button>
+      </div>
+      <div>
+        <select name="kalender" id="kalender-select">
+          <option value="Piket planner">Piket planner</option>
+          <option value="Vakantie planner">Vakantie planner</option>
+        </select>
+      </div>
+    </article>
+    <article class="kalender">
+      <div class="weekdagen">
+        <div class="dag">Ma</div>
+        <div class="dag">Di</div>
+        <div class="dag">Wo</div>
+        <div class="dag">Do</div>
+        <div class="dag">Vr</div>
+        <div class="dag">Za</div>
+        <div class="dag">Zo</div>
+      </div>
+      <template id="day-template">
+        <div class="dag">
+          <div class="datum"></div>
+        </div>
+      </template>
+      <template id="event-template">
+        <div class="event"></div>
+      </template>
+      <div class="dagen">
+      </div>
+    </article>
+  </section>
+     
+
+  
+</main>
+
+<%- include('./partials/foot') %>

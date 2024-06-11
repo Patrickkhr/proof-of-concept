@@ -1,0 +1,556 @@
+@font-face {
+  font-family: "Clan Pro", sans-serif;
+  src: url(/FFClanProRegular.TTF);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Clan Pro", sans-serif;
+  src: url(/FFClanProMedium.TTF);
+  font-weight: 200;
+}
+
+:root {
+  --primary-font: "Clan Pro", sans-serif;
+  /* colors */
+  --white: #FFFFFF;
+  --black: #292929;
+
+  --primary: #003D86;
+  --secondary: #FFCD00;
+
+  /* Backgrounds */
+  --bg-grijs: #F5F6F7;
+
+  /* Border-radius */
+  --radius-1: 16px;
+  --radius-2: 8px;
+  --radius-3: 6px;
+
+  /* Spacing  */
+  --spacing-0_5: 0.5em;
+  --spacing-1: 1em;
+  --spacing-2: 2em;
+  --spacing-4: 4em;
+}
+
+* {  
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Clan Pro";
+}
+
+h1, h2, h3, 
+h4, h5, h6 {
+  font-family: "Clan Pro";
+  font-weight: 500;
+  color: var(--primary);
+}
+
+h1  {  font-size: 48px; }
+h2  {  font-size: 26px;  }
+h3  {  font-size: 26px;  }
+h4  {  font-size: 20px;  }
+p   {  font-size: 16px;  }
+a   {  font-size: 16px; text-decoration: none; cursor: pointer;}
+
+body {
+  font-family: "Clan Pro";
+}
+
+/* START Hamburger Menu */
+.nav-menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+  background-color: var(--white);
+}
+
+.nav-menu  li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: var(--spacing-0_5);
+  text-align: center;
+}
+
+.nav-menu > li:first-of-type {
+  display: none;
+}
+
+.nav-menu > li > a > svg {
+  display: none;
+}
+/* END Hamburger Menu */
+
+/* START Login page */
+main.loginPage {
+  height: 100vh;
+}
+
+main.loginPage section{
+  margin: auto;
+  max-width: 45%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.loginForm {
+  border-radius: 12px;
+  padding: var(--spacing-1);
+}
+
+
+.loginForm input {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  margin: 10px 0;
+  padding: 14px 12px;
+  font-size: 16px;
+  border-radius: var(--radius-3); 
+  background-color: #f2f2f2;
+  font-family: Raleway, sans-serif;
+}
+
+.loginForm input[type=text],
+.loginForm input[type=password] {
+  border: 1px solid #f2f2f2;
+  transition: .2s;
+}
+
+.loginForm input[type=text]:hover,
+.loginForm input[type=password]:hover {
+  border-color: var(--secondary);;
+  outline: none;
+  transition: all .2s ease-in-out;
+} 
+
+.loginForm input[type=submit] {
+  background: var(--secondary);
+  border: 0 solid;
+  border-color: unset;
+  border-radius: var(--radius-3);
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.loginForm input[type=submit]:hover {
+  background: #f2b91d;;  
+}
+
+.loginForm h1 {
+  color: var(--primary);
+  margin-block: 0.5em;
+  font-weight: bold;
+}
+
+
+.links {
+  display: table;
+  width: 100%;  
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.links a {
+  display: table-cell;
+  padding-top: 10px;
+}
+
+.links a:first-child {
+  text-align: left;
+}
+
+.links a:last-child {
+  text-align: right;
+}
+
+.loginForm a {
+  text-decoration: none;  
+  font-size: .8em;
+}
+
+.loginForm a:visited {
+  color: inherit;
+}
+
+.loginForm a:hover {
+  text-decoration: underline;
+}
+/* END Login page */
+
+/* START Overzicht page */
+main.overzicht {
+  background-color: var(--bg-grijs);
+}
+
+main.overzicht .container {  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: var(--spacing-2);
+  grid-auto-flow: row;
+  grid-template-areas:
+    "welkom"
+    "kalender-buttons"
+    "kalender"
+    "diensten";
+  height: auto;
+  padding-block: var(--spacing-2);
+  max-width: 1440px;
+  margin: auto;
+}
+
+
+main.overzicht .container article {
+  border-radius: var(--radius-3);
+}
+
+.bg-grijs {
+  background-color: var(--bg-grijs);
+  padding-block: var(--spacing-2);
+  padding-inline: var(--spacing-1);
+  border-radius: var(--radius-3);
+  height: 50px;
+  min-width: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-wit {
+  padding-inline: var(--spacing-1);
+  padding-block: var(--spacing-0_5);
+  background-color: var(--white);
+  border-radius: 3px;
+}
+ 
+/* Welkom START */
+.welkom { 
+  grid-area: welkom; 
+  background-color:white;
+  padding: var(--spacing-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1em;
+}
+
+article.welkom > article {
+  display: flex;
+  gap: var(--spacing-1);
+}
+
+article.welkom > article > span > a {
+  display: flex;
+}
+/* Welkom END */
+
+/* Diensten START */
+.diensten {
+  grid-area: diensten; 
+  background-color: white;
+  padding: var(--spacing-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.diensten > h2 {
+  border-bottom: 2px solid var(--primary);
+  font-size: 32px;
+}
+
+.diensten > h2::before {
+  content: "";
+  white-space: pre-line;
+  display: block;
+}
+
+.diensten > h2::after {
+  content: "";
+  display: block;
+  margin-top: var(--spacing-0_5);
+}
+
+.diensten > div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--spacing-1);
+}
+/* Diensten END */
+
+/* Kalender-buttons START */
+.kalender-buttons { 
+  grid-area: kalender-buttons; 
+  background-color: white;
+  padding: var(--spacing-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.kalender-buttons > h2 {
+  font-size: 32px;
+}
+
+.kalender-buttons > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-1);
+  width: 100%;
+  height: 100%;
+}
+
+.kalender-buttons > div > button {
+  background-color: var(--bg-grijs);
+  padding: var(--spacing-1);
+  border: none;
+  border-radius: var(--radius-3);
+  cursor: pointer;
+}
+
+.kalender-buttons > div > button:nth-of-type(2) {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  padding-inline: 1.5em;
+}
+
+.kalender-buttons > div > button:nth-of-type(2):disabled {
+  text-decoration: none;
+}
+
+.kalender-buttons > div > select,
+main.piket_planner .container > article:first-of-type > div > input,
+main.piket_planner .container > article:first-of-type > div > select {
+  border: none;
+  background-color: var(--bg-grijs);
+  padding: var(--spacing-1);
+  border-radius: var(--radius-3);
+  width: 100%;
+}
+/* Kalender-buttons END */
+
+/* Kalender START*/
+.kalender { 
+  grid-area: kalender; 
+  background-color: white;
+  padding: var(--spacing-1);
+}
+
+.kalender .weekdagen {
+  display: flex;
+  margin-bottom: 10px;
+}
+.kalender .weekdagen .dag {
+  width: calc(100% / 7);
+  text-align: center;
+  font-weight: 600;
+}
+.kalender .dagen {
+  display: flex;
+  flex-wrap: wrap;
+}
+.kalender .dagen .dag {
+  width: calc(100% / 7);
+  height: 80px;
+  background: var(--bg-grijs);
+  color: var(--text-color);
+  padding: var(--spacing-0_5);
+  border-block: 1px solid var(--primary);
+  transition: all 0.3s;
+}
+.kalender .dagen .dag .datum {
+  text-align: center;
+}
+.kalender .dagen .dag:not(.next):not(.prev):hover {
+  color: var(--white);
+  background: var(--primary);
+  transform: scale(1.05);
+}
+.kalender .dagen .dag.next,
+.kalender .dagen .dag.prev {
+  color: #ccc;
+}
+.kalender .dagen .dag.today {
+  color: var(--white);
+  background: var(--primary);
+}
+.event {
+  background-color: lightblue;
+  padding: 4px;
+  margin-bottom: 5px;
+  font-size: 10px;
+}
+/* Kalender END */
+
+/* END Overzicht pagina */
+
+/* START Piket planner pagina */
+main.piket_planner {
+  background-color: var(--bg-grijs);
+}
+
+main.piket_planner .container {  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: var(--spacing-2);
+  grid-auto-flow: row;
+  grid-template-areas:
+    "planner"
+    "kalender-buttons"
+    "kalender";
+  height: auto;
+  padding-block: var(--spacing-2);
+  max-width: 1440px;
+  margin: auto;
+}
+
+main.piket_planner .container > article:first-of-type {
+  grid-area: planner;
+  background-color: white;
+  padding: var(--spacing-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: var(--spacing-2);
+}
+
+main.piket_planner .container > article:first-of-type > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+main.piket_planner .container > article:first-of-type > div > button {
+  border: none;
+  padding: var(--spacing-1);
+  background-color: var(--primary);
+  border-radius: var(--radius-3);
+  color: var(--white);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation {
+    width: 80px;
+    position: fixed;
+    height: 100%;
+    background-color: var(--bg-grijs);
+  }
+  .nav-menu {
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .nav-menu > li:first-of-type {
+    position: absolute;
+    top: var(--spacing-2);
+    padding: 0em;
+    display: block;
+  }
+
+  .nav-menu > li:last-of-type {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .nav-menu > li > a > svg {
+    display: block;
+  }
+  .nav-menu > li > a > p {
+    display: none;
+  }
+
+  .bg-grijs {
+    padding-inline: var(--spacing-0_5);
+  }
+
+  main.overzicht,
+  main.piket_planner  {
+    margin-left: 80px;
+  }
+
+  main.overzicht .container {  
+    padding-inline: var(--spacing-1);
+    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-areas:
+      "welkom diensten"
+      "kalender-buttons kalender-buttons"
+      "kalender kalender";
+  }
+  main.piket_planner .container {
+    padding-inline: var(--spacing-1);
+  }
+
+  .welkom {
+    gap:  unset;
+  }
+
+  .kalender-buttons {
+    flex-direction: row;
+  }
+
+  .kalender-buttons > div {
+    width: calc(100% / 3);
+  }
+  .kalender-buttons > div > select {
+    width: auto;
+  }
+  .kalender .dagen .dag {
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-menu > li:first-of-type {
+    top: var(--spacing-4);
+  }
+  main.overzicht .container {  
+    grid-template-columns: 1fr 1fr 0.6fr 1.4fr;
+    grid-template-areas:
+      "welkom welkom welkom diensten"
+      "kalender-buttons kalender-buttons kalender-buttons kalender-buttons"
+      "kalender kalender kalender kalender";
+    padding-inline: var(--spacing-4);
+    padding-block: var(--spacing-4);
+  }
+
+  .bg-wit {
+    padding-inline: var(--spacing-0_5);
+  }
+  .bg-grijs {
+    padding-inline: var(--spacing-1);
+  }
+  .kalender-buttons > div:first-of-type {
+    justify-content: flex-start;
+  }
+  .kalender-buttons > div:last-of-type {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  main.overzicht .container {  
+    grid-template-columns: 1fr 1fr 0.8fr 1.2fr;
+  }
+  .welkom, .diensten, .kalender-buttons, .kalender {
+    padding: var(--spacing-2);
+  }
+  .bg-wit {
+    padding-inline: var(--spacing-1);
+  }
+}

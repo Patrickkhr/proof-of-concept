@@ -1,0 +1,60 @@
+<%- include('./partials/head') %>
+<%- include('./partials/navigation', {current: '/piket_planner'}); %>
+
+<main class="piket_planner">
+  <section class="container">
+    <article>
+      <h1>Plan uw piket.</h1>
+      <div>
+        <input type="date" id="eventDate">
+        <input type="text" id="eventDescription" placeholder="Event beschrijving">
+        <select id="roleSelect">
+          <option value="">Selecteer een rol</option>
+          <% role.forEach(role => { %>
+            <option value="<%= role.id %>"><%= role.role %></option>
+          <% }); %>
+        </select>
+        <button id="addEventBtn">Plan piket</button>
+      </div>
+    </article>
+    <article class="kalender-buttons">
+      <div>
+        <h2 class="month"></h2>
+      </div>
+      <div>
+        <button class="prev"><</button>
+        <button class="today">Vandaag</button>
+        <button class="next">></button>
+      </div>
+      <div>
+        <select name="kalender" id="kalender-select">
+          <option value="Piket planner">Piket planner</option>
+          <option value="Vakantie planner">Vakantie planner</option>
+        </select>
+      </div>
+    </article>
+    <article class="kalender">
+      <div class="weekdagen">
+        <div class="dag">Ma</div>
+        <div class="dag">Di</div>
+        <div class="dag">Wo</div>
+        <div class="dag">Do</div>
+        <div class="dag">Vr</div>
+        <div class="dag">Za</div>
+        <div class="dag">Zo</div>
+      </div>
+      <template id="day-template">
+        <div class="dag">
+          <div class="datum"></div>
+        </div>
+      </template>
+      <template id="event-template">
+        <div class="event"></div>
+      </template>
+      <div class="dagen">
+      </div>
+    </article>
+  </section>
+</main>
+
+<%- include('./partials/foot') %>

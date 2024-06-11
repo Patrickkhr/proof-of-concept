@@ -1,0 +1,83 @@
+<nav class="navigation">
+    <ul class="nav-menu">
+      <li>
+        <a href="/"
+          <% if (current == '/') { %> class="active" <% } %>>
+          <svg width="35" height="35" viewBox="0 0 46 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 16.3334H43" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 3H43" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 29.6666H43" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p>Home</p>
+        </a>
+      </li>
+
+      <li>
+        <a href="/overzicht"
+          <% if (current == '/overzicht') { %> class="active" <% } %>>
+          <svg width="40" height="40" viewBox="0 0 45 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.2689 10.3846C12.3227 10.3846 11.5381 9.6 11.5381 8.65385V1.73077C11.5381 0.784615 12.3227 0 13.2689 0C14.215 0 14.9996 0.784615 14.9996 1.73077V8.65385C14.9996 9.6 14.215 10.3846 13.2689 10.3846Z" fill="black"/>
+            <path d="M31.7308 10.3846C30.7846 10.3846 30 9.6 30 8.65385V1.73077C30 0.784615 30.7846 0 31.7308 0C32.6769 0 33.4615 0.784615 33.4615 1.73077V8.65385C33.4615 9.6 32.6769 10.3846 31.7308 10.3846Z" fill="black"/>
+            <path d="M14.4229 30.5771C14.1229 30.5771 13.8229 30.5078 13.546 30.3924C13.246 30.2771 13.0152 30.1155 12.7845 29.9078C12.3691 29.4694 12.1152 28.8924 12.1152 28.2694C12.1152 27.9694 12.1845 27.6694 12.2998 27.3924C12.4152 27.1155 12.5768 26.8617 12.7845 26.6309C13.0152 26.4232 13.246 26.2617 13.546 26.1463C14.3768 25.8001 15.4152 25.9847 16.0614 26.6309C16.4768 27.0694 16.7306 27.6694 16.7306 28.2694C16.7306 28.4078 16.7075 28.5694 16.6845 28.7309C16.6614 28.8694 16.6152 29.0078 16.546 29.1463C16.4998 29.2847 16.4306 29.4232 16.3383 29.5617C16.2691 29.6771 16.1537 29.7924 16.0614 29.9078C15.6229 30.3232 15.0229 30.5771 14.4229 30.5771Z" fill="black"/>
+            <path d="M22.5001 30.5766C22.2001 30.5766 21.9001 30.5073 21.6232 30.392C21.3232 30.2766 21.0924 30.115 20.8616 29.9073C20.4462 29.4689 20.1924 28.892 20.1924 28.2689C20.1924 27.9689 20.2616 27.6689 20.377 27.392C20.4924 27.115 20.6539 26.8612 20.8616 26.6304C21.0924 26.4227 21.3232 26.2612 21.6232 26.1458C22.4539 25.7766 23.4924 25.9843 24.1385 26.6304C24.5539 27.0689 24.8078 27.6689 24.8078 28.2689C24.8078 28.4073 24.7847 28.5689 24.7616 28.7304C24.7385 28.8689 24.6924 29.0073 24.6232 29.1458C24.577 29.2843 24.5078 29.4227 24.4155 29.5612C24.3462 29.6766 24.2308 29.792 24.1385 29.9073C23.7001 30.3227 23.1001 30.5766 22.5001 30.5766Z" fill="black"/>
+            <path d="M30.5772 30.5766C30.2772 30.5766 29.9772 30.5073 29.7003 30.392C29.4003 30.2766 29.1695 30.115 28.9388 29.9073C28.8465 29.792 28.7541 29.6766 28.6618 29.5612C28.5695 29.4227 28.5003 29.2843 28.4541 29.1458C28.3849 29.0073 28.3388 28.8689 28.3157 28.7304C28.2926 28.5689 28.2695 28.4073 28.2695 28.2689C28.2695 27.6689 28.5234 27.0689 28.9388 26.6304C29.1695 26.4227 29.4003 26.2612 29.7003 26.1458C30.5541 25.7766 31.5695 25.9843 32.2157 26.6304C32.6311 27.0689 32.8849 27.6689 32.8849 28.2689C32.8849 28.4073 32.8618 28.5689 32.8388 28.7304C32.8157 28.8689 32.7695 29.0073 32.7003 29.1458C32.6541 29.2843 32.5849 29.4227 32.4926 29.5612C32.4234 29.6766 32.308 29.792 32.2157 29.9073C31.7772 30.3227 31.1772 30.5766 30.5772 30.5766Z" fill="black"/>
+            <path d="M14.4229 38.6534C14.1229 38.6534 13.8229 38.5844 13.546 38.4691C13.2691 38.3537 13.0152 38.1919 12.7845 37.9842C12.3691 37.5458 12.1152 36.9458 12.1152 36.3458C12.1152 36.0458 12.1845 35.7458 12.2998 35.4688C12.4152 35.1688 12.5768 34.9152 12.7845 34.7075C13.6383 33.8537 15.2075 33.8537 16.0614 34.7075C16.4768 35.146 16.7306 35.7458 16.7306 36.3458C16.7306 36.9458 16.4768 37.5458 16.0614 37.9842C15.6229 38.3996 15.0229 38.6534 14.4229 38.6534Z" fill="black"/>
+            <path d="M22.5001 38.6534C21.9001 38.6534 21.3001 38.3996 20.8616 37.9842C20.4462 37.5458 20.1924 36.9458 20.1924 36.3458C20.1924 36.0458 20.2616 35.7458 20.377 35.4688C20.4924 35.1688 20.6539 34.9152 20.8616 34.7075C21.7155 33.8537 23.2847 33.8537 24.1385 34.7075C24.3462 34.9152 24.5078 35.1688 24.6232 35.4688C24.7385 35.7458 24.8078 36.0458 24.8078 36.3458C24.8078 36.9458 24.5539 37.5458 24.1385 37.9842C23.7001 38.3996 23.1001 38.6534 22.5001 38.6534Z" fill="black"/>
+            <path d="M30.5772 38.6537C29.9772 38.6537 29.3772 38.3998 28.9388 37.9844C28.7311 37.7768 28.5695 37.5229 28.4541 37.2229C28.3388 36.946 28.2695 36.646 28.2695 36.346C28.2695 36.046 28.3388 35.746 28.4541 35.4691C28.5695 35.1691 28.7311 34.9152 28.9388 34.7075C29.4695 34.1767 30.2772 33.9229 31.0157 34.0844C31.1772 34.1075 31.3157 34.1537 31.4541 34.2229C31.5926 34.2691 31.7311 34.3383 31.8695 34.4306C31.9849 34.4998 32.1003 34.6152 32.2157 34.7075C32.6311 35.146 32.8849 35.746 32.8849 36.346C32.8849 36.946 32.6311 37.546 32.2157 37.9844C31.7772 38.3998 31.1772 38.6537 30.5772 38.6537Z" fill="black"/>
+            <path d="M42.1153 19.8227H2.88458C1.93842 19.8227 1.15381 19.0381 1.15381 18.092C1.15381 17.1458 1.93842 16.3612 2.88458 16.3612H42.1153C43.0615 16.3612 43.8461 17.1458 43.8461 18.092C43.8461 19.0381 43.0615 19.8227 42.1153 19.8227Z" fill="black"/>
+            <path d="M31.7308 49.6154H13.2692C4.84615 49.6154 0 44.7692 0 36.3462V16.7308C0 8.3077 4.84615 3.46155 13.2692 3.46155H31.7308C40.1538 3.46155 45 8.3077 45 16.7308V36.3462C45 44.7692 40.1538 49.6154 31.7308 49.6154ZM13.2692 6.92309C6.66923 6.92309 3.46154 10.1308 3.46154 16.7308V36.3462C3.46154 42.9462 6.66923 46.1539 13.2692 46.1539H31.7308C38.3308 46.1539 41.5385 42.9462 41.5385 36.3462V16.7308C41.5385 10.1308 38.3308 6.92309 31.7308 6.92309H13.2692Z" fill="black"/>
+          </svg>
+          <p>Overzicht</p> 
+        </a>
+      </li>
+
+      <li>
+        <a href="/piket_planner"
+          <% if (current == '/piket_planner') { %> class="active" <% } %>>
+          <svg width="40" height="40" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M26 14.5001V37.5001M14.5 26.0001H37.5" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M26 49C38.7025 49 49 38.7025 49 26C49 13.2975 38.7025 3 26 3C13.2975 3 3 13.2975 3 26C3 38.7025 13.2975 49 26 49Z" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p>Piket planner</p>
+        </a>
+      </li>
+
+      <li>
+        <a href="/profile"
+          <% if (current == '/profile') { %> class="active" <% } %>>
+          <svg width="40" height="40" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M26 49C38.7025 49 49 38.7025 49 26C49 13.2975 38.7025 3 26 3C13.2975 3 3 13.2975 3 26C3 38.7025 13.2975 49 26 49Z" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="4" y="3" width="45" height="45" fill="url(#pattern0_43_2)"/>
+            <rect x="4" y="3" width="45" height="45" fill="url(#pattern1_43_2)"/>
+            <rect x="4" y="3" width="45" height="45" fill="url(#pattern2_43_2)"/>
+            <defs>
+            <pattern id="pattern0_43_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlink:href="#image0_43_2" transform="scale(0.0111111)"/>
+            </pattern>
+            <pattern id="pattern1_43_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlink:href="#image0_43_2" transform="scale(0.0111111)"/>
+            </pattern>
+            <pattern id="pattern2_43_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlink:href="#image0_43_2" transform="scale(0.0111111)"/>
+            </pattern>
+            <image id="image0_43_2" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAADnklEQVR4nO2cXWjOURzHP5u3oV2gZkmxlsJuuFhqyqSGaF4ukJQkrsjcSVHTvBRJXlotF7jBLaUMw4V5K3lZYYYh886Ft83LOjp1Tj0ty/Ns/5efc86nvrWenv2f8/v0f/7P/5zzPwcCgUAgEAgEAoFAIJAzpcBq4DBwCXgOfAJ+AV+BZ+b1WmBq7of3m2HAOuAWoHLMBaAs7QKkkwesAd73QXBmOoEVaRcjlVFAYz8FZ6YbWJh2UdIYC7RFKNlGfzM2ANVAEZ4zAngYg+Se6QKOAmPw9Jp8JgHJmekAyvGMlQlLtvkIjMMThgAvUxKtcxlPWJuiZJsqPOCaANHncZwiAZKV6caPxGEWCZBs43QPco8AwTb7cJiLAgTb6G6/s7QIEGzzBIfpECA4czzEWToFCM4cA3GWLwIE23zGYVoFCLbRbXGWRgGCbZpwmK0CBNtsw2GmCRBsU4njPBAg+SmQj+McFCD6EI4zy8xSpy1at2EmDnNagGSbUzhMiwDBNndxmOsCBNvomR5naRAg2KYeh5knQLDNXBznigDJV81DPE5TAtxJUfJtYDwesT8FyfozvaM6BdHz8ZDBwNsEJb8GBuEpmxIUvR7P16y0JyBZ90gH4jlVMQ80OT+AlAtbYhS9Oe3iJJEHnIxB8gkfOia5MiDie+sGn+8ysiEq0YF/EEQnhApndBDtFCqc0UG0M1RGeEbPSLsYyeMeLRGKvmeOGeiB7sHVAD8jWt5W68NjX/1hujkb+/O8RkXaRfwv5AOrctzL45H5H+/P4hJzaWgyy+CyXbmqN6babhbLvzFrT7rM3/q1OmBKlscqBM6Z/ZdqTJucuOaWG0l3/3IG3k94NlpvjHKzl0tNnWnrfzXSNwnYCbzIch6vIqHrfjZbV+gt33YAExGKPhMW9PHZut+muIIY2jUU2GU+oy/P5umZejHM6eUrmWvagWUR/ZjpYyw3mxD2t103gNmkyMiYZkXazA/V6D60qRjYCDyOoV3HzYZbiTIhpm3UVI9J1WZzWVkCTDYiC0yKzWtLzXuaE1hN0Gq28kyE0oQffFHC8iqJu6VCYatfVUrRt6bD4xRdL6BIJSQH4pJcJmRFlRKSbtNniJxjAopTwnIkasl6XPebgMKUsHyPesx7sYCilNDoHnFk7BVQkBKa3VGKPiugICU0etfgyIijS6scie4hR8YHAQUpoXkXpegfAgpSQuP0bmOBQCAQCAQCgUAA9/kDstW19j13LD0AAAAASUVORK5CYII="/>
+            </defs>
+          </svg>
+          <p>Profiel</p>
+        </a>
+      </li>
+      <li>
+        <a href="/"
+          <% if (current == '/') { %> class="active" <% } %>>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+              <g id="SVGRepo_iconCarrier">
+              <path d="M2 6a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v2a1 1 0 1 1-2 0V6H4v12h9v-2a1 1 0 1 1 2 0v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm15.293 2.293a1 1 0 0 1 1.414 0l3 3a1 1 0 0 1 0 1.414l-3 3a1 1 0 0 1-1.414-1.414L18.586 13H9a1 1 0 1 1 0-2h9.586l-1.293-1.293a1 1 0 0 1 0-1.414z" fill="#0D0D0D"/></g>
+            </svg>
+            <p>Log uit</p>
+        </a>
+      </li>
+    </ul>
+    
+  </nav>
