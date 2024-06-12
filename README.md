@@ -57,7 +57,7 @@ Dit valt binnen het account van de werknemer. De personen, rollen en de vakantie
 
 ## Bronnen
 
-### TuMi Mundo
+### ANWB
 [Prototype design AWNB]([https://www.figma.com/file/RDlD4etdXBvcOW9AAqueBz/TuMiMundo_FDND_Prototype?type=design&node-id=0-1&mode=design&t=NvjIgXrZ2n4fxpY1-0](https://www.figma.com/design/o0pSibJB5oxjsQr1KqYXRR/anwb-piket-designn?node-id=0-1&t=efAayhm2pN7Uh1vB-0))
 [Sitemap ANWB](https://www.figma.com/design/8xVbaUnmQVqdRpkH4XHazQ/ANWB-opdracht?node-id=0-1)
 
