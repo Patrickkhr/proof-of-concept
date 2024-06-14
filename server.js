@@ -25,7 +25,7 @@ app.use(express.static('public'))
 // Zorg dat werken met request data makkelijker wordt
 app.use(express.urlencoded({ extended: true }));
 
-
+let events = [];
 
 /*** Routes & data ***/
 // Maak een GET route voor de index
@@ -37,8 +37,8 @@ app.get('/', function(request, response) {
 // Stap 2
 app.get('/overzicht', function(request, response) {
   Promise.all([
-  fetchJson('https://fdnd-agency.directus.app/items/anwb_persons'),
-  fetchJson('https://fdnd-agency.directus.app/items/anwb_roles')
+    fetchJson('https://fdnd-agency.directus.app/items/anwb_persons'),
+    fetchJson('https://fdnd-agency.directus.app/items/anwb_roles')
   ]).then(([personData, roleData]) => {
     response.render('overzicht', {
       person: personData.data,
@@ -47,12 +47,40 @@ app.get('/overzicht', function(request, response) {
   });
 })
 
+// GET route voor het ophalen van events
+app.get('/events', (req, res) => {
+  res.json(events);
+});
+
+// POST route voor het opslaan van nieuwe events
+app.post('/plan_piket', (req, res) => {
+  const { eventDate, eventDescription, roleSelect } = req.body;
+  const newEvent = { date: eventDate, description: eventDescription, role: roleSelect };
+  events.push(newEvent);
+  
+  console.log('Piket gepland:', newEvent);
+
+  res.redirect('/piket_planner');
+});
+
 app.get('/piket_planner', function(request, response) {
+  Promise.all([
+    fetchJson('https://fdnd-agency.directus.app/items/anwb_persons'),
+  fetchJson('https://fdnd-agency.directus.app/items/anwb_roles')
+  ]).then(([personData, roleData]) => {
+    response.render('piket_planner', {
+      person: personData.data,
+      role: roleData.data
+    })
+  });
+})
+
+app.get('/profiel', function(request, response) {
   Promise.all([
   fetchJson('https://fdnd-agency.directus.app/items/anwb_persons'),
   fetchJson('https://fdnd-agency.directus.app/items/anwb_roles')
   ]).then(([personData, roleData]) => {
-    response.render('piket_planner', {
+    response.render('profiel', {
       person: personData.data,
       role: roleData.data
     })

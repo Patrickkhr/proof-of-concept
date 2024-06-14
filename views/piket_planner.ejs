@@ -5,17 +5,17 @@
   <section class="container">
     <article>
       <h1>Plan uw piket.</h1>
-      <div>
-        <input type="date" id="eventDate">
-        <input type="text" id="eventDescription" placeholder="Event beschrijving">
-        <select id="roleSelect">
+      <form method="post" action="/plan_piket">
+        <input type="date" name="eventDate" id="eventDate">
+        <input type="text" name="eventDescription" id="eventDescription" placeholder="Event beschrijving">
+        <select name="roleSelect" id="roleSelect">
           <option value="">Selecteer een rol</option>
           <% role.forEach(role => { %>
             <option value="<%= role.id %>"><%= role.role %></option>
           <% }); %>
         </select>
-        <button id="addEventBtn">Plan piket</button>
-      </div>
+        <button type="submit" id="addEventBtn">Plan piket</button>
+      </form>
     </article>
     <article class="kalender-buttons">
       <div>
@@ -28,8 +28,9 @@
       </div>
       <div>
         <select name="kalender" id="kalender-select">
-          <option value="Piket planner">Piket planner</option>
-          <option value="Vakantie planner">Vakantie planner</option>
+          <option value="piket planning">Eigen planning</option>
+          <option value="totaal planning">Totaal planning</option>
+          <option value="vakantie planning">Vakantie planning</option>
         </select>
       </div>
     </article>
@@ -49,7 +50,10 @@
         </div>
       </template>
       <template id="event-template">
-        <div class="event"></div>
+        <div class="event">
+          <div class="event-description"></div>
+          <div class="piket-lijn"></div>
+        </div>
       </template>
       <div class="dagen">
       </div>

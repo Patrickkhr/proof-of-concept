@@ -332,8 +332,10 @@ article.welkom > article > span > a {
 }
 
 .kalender-buttons > div > select,
-main.piket_planner .container > article:first-of-type > div > input,
-main.piket_planner .container > article:first-of-type > div > select {
+main.overzicht .piket-overlay > form > input,
+main.overzicht .piket-overlay > form > select,
+main.piket_planner .container > article:first-of-type > form > input,
+main.piket_planner .container > article:first-of-type > form > select {
   border: none;
   background-color: var(--bg-grijs);
   padding: var(--spacing-1);
@@ -362,39 +364,97 @@ main.piket_planner .container > article:first-of-type > div > select {
   display: flex;
   flex-wrap: wrap;
 }
-.kalender .dagen .dag {
-  width: calc(100% / 7);
-  height: 80px;
-  background: var(--bg-grijs);
-  color: var(--text-color);
-  padding: var(--spacing-0_5);
-  border-block: 1px solid var(--primary);
-  transition: all 0.3s;
-}
 .kalender .dagen .dag .datum {
   text-align: center;
 }
-.kalender .dagen .dag:not(.next):not(.prev):hover {
+main.overzicht .kalender .dagen > a:not(.next):not(.prev):hover .datum,
+main.piket_planner .kalender .dagen .dag:not(.next):not(.prev):hover .datum  {
   color: var(--white);
   background: var(--primary);
-  transform: scale(1.05);
 }
-.kalender .dagen .dag.next,
-.kalender .dagen .dag.prev {
+main.overzicht .kalender .dagen > a:not(.next):not(.prev):hover,
+main.piket_planner .kalender .dagen .dag:not(.next):not(.prev):hover {
+  border: 1px solid var(--primary);
+}
+
+main.overzicht .kalender .dagen > a,
+main.piket_planner .kalender .dagen .dag {
+  height: 80px;
+  width: calc(100% / 7);
+  background: var(--bg-grijs);
+  border-top: 1px solid var(--primary);
+  color: var(--text-color);
+  transition: all 0.3s;
+}
+main.overzicht .kalender .dagen > a.next,
+main.overzicht .kalender .dagen > a.prev,
+main.piket_planner .kalender .dagen .dag.next,
+main.piket_planner .kalender .dagen .dag.prev {
   color: #ccc;
 }
-.kalender .dagen .dag.today {
+main.overzicht .kalender .dagen > a.today,
+main.piket_planner .kalender .dagen .dag.today {
   color: var(--white);
-  background: var(--primary);
+  border: 1px solid var(--primary);
 }
-.event {
-  background-color: lightblue;
-  padding: 4px;
-  margin-bottom: 5px;
+main.overzicht .kalender .dagen > a.today .dag,
+main.piket_planner .kalender .dagen .dag.today .datum {
+  background-color: var(--primary);
+}
+.kalender .dagen .event {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--primary);
   font-size: 10px;
+}
+.kalender .dagen .event .event-description {
+  font-size: 12px;
+  align-content: center;
+  padding: 4px;
+}
+.kalender .dagen .event .piket-lijn {
+  background-color: var(--white);
+  padding: 4px;
+  color: var(--primary);
+  border-left: 1px solid var(--primary);
 }
 /* Kalender END */
 
+/* Piket-overlay Start */
+#piket-overlay {
+  opacity: 0;
+  position: absolute;
+  top: -1000px; /* Keep it at the top when open */
+  right: 0;
+  left: 0;
+  height: 100vh;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  z-index: 999;
+}
+
+#piket-overlay:target {
+  position: fixed;
+  opacity: 1;
+  top: 0; /* Keep it at the top when open */
+  right: 0;
+  left: 0;
+  height: 100vh;
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  z-index: 999;
+}
+
+.piket-overlay > a {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(41, 41, 41, 0.95);
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+}
+/* Piket-overlay END */
 /* END Overzicht pagina */
 
 /* START Piket planner pagina */
@@ -428,13 +488,28 @@ main.piket_planner .container > article:first-of-type {
   gap: var(--spacing-2);
 }
 
-main.piket_planner .container > article:first-of-type > div {
+main.piket_planner .container > article:first-of-type > form,
+main.overzicht .piket-overlay > form {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-1);
 }
 
-main.piket_planner .container > article:first-of-type > div > button {
+main.overzicht .piket-overlay > form {
+  top: calc(100% /3);
+  position: relative;
+  background-color: var(--black);
+  padding: var(--spacing-1);
+  margin-inline: var(--spacing-1);
+  z-index: 4;
+}
+
+main.overzicht .piket-overlay > form > h2 {
+  color: var(--white);
+}
+
+main.overzicht .piket-overlay > form > button,
+main.piket_planner .container > article:first-of-type > form > button {
   border: none;
   padding: var(--spacing-1);
   background-color: var(--primary);
@@ -510,7 +585,8 @@ main.piket_planner .container > article:first-of-type > div > button {
   .kalender-buttons > div > select {
     width: auto;
   }
-  .kalender .dagen .dag {
+  main.overzicht .kalender .dagen > a,
+  main.piket_planner .kalender .dagen .dag {
     height: 100px;
   }
 }
@@ -528,7 +604,10 @@ main.piket_planner .container > article:first-of-type > div > button {
     padding-inline: var(--spacing-4);
     padding-block: var(--spacing-4);
   }
-
+  main.overzicht .piket-overlay > form {
+    width: calc(100% / 2);
+    margin: auto;
+  }
   .bg-wit {
     padding-inline: var(--spacing-0_5);
   }

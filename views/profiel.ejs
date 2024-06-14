@@ -1,10 +1,10 @@
 <%- include('./partials/head') %>
-<%- include('./partials/navigation', {current: '/overzicht'}); %>
+<%- include('./partials/navigation', {current: '/profiel'}); %>
 
 <main class="overzicht">
   <section class="container">
     <article class="welkom">
-      <h1>Welkom, Jeroen</h1>
+      <h1>Welkom, Jeroen profiel</h1>
       <article>
         <span class="bg-grijs"><h2>1</h2></span>
         <span class="bg-grijs"><p>U heeft deze week lijn 1.</p></span>
@@ -55,46 +55,25 @@
         </select>
       </div>
     </article>
-    <article class="kalender">
-      <div class="weekdagen">
-        <div class="dag">Ma</div>
-        <div class="dag">Di</div>
-        <div class="dag">Wo</div>
-        <div class="dag">Do</div>
-        <div class="dag">Vr</div>
-        <div class="dag">Za</div>
-        <div class="dag">Zo</div>
+
+    <article class="kalender-buttons">
+      <div>
+        <h2 class="month"></h2>
       </div>
-      <template id="day-template">
-        <a href="#piket-overlay">
-          <div class="dag">
-            <div class="datum"></div>
-          </div>
-        </a>
-      </template>
-      <template id="event-template">
-        <div class="event">
-          <div class="event-description"></div>
-          <div class="piket-lijn"></div>
-        </div>
-      </template>
-      <div class="dagen">
+      <div>
+        <button class="prev"><</button>
+        <button class="today">Today</button>
+        <button class="next">></button>
       </div>
-      <div id="piket-overlay" class="piket-overlay">
-        <a href="#" class="close-overlay"></a>
-        <form method="post" action="/plan_piket">
-          <input type="date" name="eventDate" id="eventDate">
-          <input type="text" name="eventDescription" id="eventDescription" placeholder="Event beschrijving">
-          <select name="roleSelect" id="roleSelect">
-            <option value="">Selecteer een rol</option>
-            <% role.forEach(role => { %>
-              <option value="<%= role.id %>"><%= role.role %></option>
-            <% }); %>
-          </select>
-          <button type="submit" id="addEventBtn">Plan piket</button>
-        </form>
+      <div>
+        <select name="kalender" id="kalender-select">
+          <option value="piket planning">Eigen planning</option>
+          <option value="totaal planning">Totaal planning</option>
+          <option value="vakantie planning">Vakantie planning</option>
+        </select>
       </div>
     </article>
+    
   </section>
      
 
