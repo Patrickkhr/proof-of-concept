@@ -64,8 +64,8 @@ Dit valt binnen het account van de werknemer. De personen, rollen en de vakantie
 ## Bronnen
 
 ### ANWB
-[Prototype design AWNB](https://www.figma.com/design/o0pSibJB5oxjsQr1KqYXRR/anwb-piket-designn?node-id=0-1&t=MuILqTQm1p8UTmwQ-0)
-[Sitemap ANWB](https://www.figma.com/design/8xVbaUnmQVqdRpkH4XHazQ/ANWB-opdracht?node-id=0-1)
+[Prototype design AWNB](https://www.figma.com/design/o0pSibJB5oxjsQr1KqYXRR/anwb-piket-designn?node-id=0-1&t=MuILqTQm1p8UTmwQ-0)  
+[Sitemap ANWB](https://www.figma.com/design/8xVbaUnmQVqdRpkH4XHazQ/ANWB-opdracht?node-id=0-1)  
 [Huisstijl ANWB](https://zeroheight.com/4b6b69bd4/p/77cb1c-introduction)
 
 
