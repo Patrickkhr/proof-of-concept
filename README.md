@@ -3,7 +3,8 @@
 # ANWB Piket planner
 ANWB Piket planner waarin je in één overzicht kan zien welke rol je hebt, hoe je planning er uit ziet en wanneer je volgende dienst is.
 
-<img width="806" alt="image" src="https://github.com/Patrickkhr/proof-of-concept/assets/143999685/e54fea62-7c11-4ede-bdfc-171015bfe22a">
+<img width="731" alt="image" src="https://github.com/Patrickkhr/proof-of-concept/assets/143999685/74ea636b-2f63-4068-b050-42e0e7303d28">
+
 
 
 
@@ -30,6 +31,9 @@ Dit valt binnen het account van de werknemer. De personen, rollen en de vakantie
 <!--Bij Gebruik staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
 <img width="1440" alt="image" src="https://github.com/Patrickkhr/proof-of-concept/assets/143999685/d2fde3cc-8f73-48e3-914a-d1b7160f8777">
 
+<img width="1440" alt="image" src="https://github.com/Patrickkhr/proof-of-concept/assets/143999685/dcfd9add-e31a-4cd1-87e4-04313de0cf51">
+
+
 
 
 ## Kenmerken
@@ -39,7 +43,7 @@ Dit valt binnen het account van de werknemer. De personen, rollen en de vakantie
 * JS
 * Node
 * EJS
-* UML Diagram
+* Mobile first
 * Progressive Enhancement
 
 ### Progressive Enhancement
