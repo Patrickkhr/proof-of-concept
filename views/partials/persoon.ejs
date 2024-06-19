@@ -1,0 +1,10 @@
+<% person.forEach(person => { %>
+  <article>
+    <div>
+      <h3><%= person.name %></h3>
+      <p><%= person.name.replace(/\s+/g, '').toLowerCase() %>@anwb.com</p>
+    </div>
+    <h3>Lijn <%= person.id %></h3>
+    <p>actief</p>
+  </article>
+<% }); %>

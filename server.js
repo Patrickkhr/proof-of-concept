@@ -13,7 +13,7 @@ const apiUrl = "https://fdnd-agency.directus.app/items/"
 const app = express()
 
 // Stel ejs in als template engine
-// View engine zorgt ervoor dat data die je ophaalt uit de api , waar je in je code dingen mee doet, daar html van maakt
+// View engine zorgt ervoor dat data die je ophaalt uit de api, waar je in je code dingen mee doet, daar html van maakt
 app.set('view engine', 'ejs')
 
 // Stel de map met ejs templates in
@@ -25,16 +25,40 @@ app.use(express.static('public'))
 // Zorg dat werken met request data makkelijker wordt
 app.use(express.urlencoded({ extended: true }));
 
+// Maak een array om de evenementen op te slaan
 let events = [];
 
+// Functie om evenementen voor het hele jaar te genereren
+const generateYearlyEvents = () => {
+  const roles = ['1', '2', '3', '4', '5'];
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+
+  for (let month = 0; month < 12; month++) {
+    const daysInMonth = new Date(currentYear, month + 1, 0).getDate();
+    for (let day = 1; day <= daysInMonth; day++) {
+      for (const role of roles) {
+        events.push({
+          date: new Date(currentYear, month, day).toISOString().split('T')[0],
+          description: '',
+          role: role
+        });
+      }
+    }
+  }
+};
+
+// Genereer evenementen voor het jaar bij serverstart
+generateYearlyEvents();
+
 /*** Routes & data ***/
+
 // Maak een GET route voor de index
-// Stap 1
 app.get('/', function(request, response) {
   response.render('index')
 })
 
-// Stap 2
+// Maak een GET route voor het overzicht
 app.get('/overzicht', function(request, response) {
   Promise.all([
     fetchJson('https://fdnd-agency.directus.app/items/anwb_persons'),
@@ -55,10 +79,17 @@ app.get('/events', (req, res) => {
 // POST route voor het opslaan van nieuwe events
 app.post('/plan_piket', (req, res) => {
   const { eventDate, eventDescription, roleSelect } = req.body;
-  const newEvent = { date: eventDate, description: eventDescription, role: roleSelect };
-  events.push(newEvent);
-  
-  console.log('Piket gepland:', newEvent);
+
+  // Vind het evenement en werk de beschrijving en rol bij
+  const eventIndex = events.findIndex(event => event.date === eventDate && event.role === roleSelect);
+  if (eventIndex !== -1) {
+    events[eventIndex].description = eventDescription;
+  } else {
+    const newEvent = { date: eventDate, description: eventDescription, role: roleSelect };
+    events.push(newEvent);
+  }
+
+  console.log('Piket gepland:', { date: eventDate, description: eventDescription, role: roleSelect });
 
   res.redirect('/piket_planner');
 });
@@ -66,7 +97,7 @@ app.post('/plan_piket', (req, res) => {
 app.get('/piket_planner', function(request, response) {
   Promise.all([
     fetchJson('https://fdnd-agency.directus.app/items/anwb_persons'),
-  fetchJson('https://fdnd-agency.directus.app/items/anwb_roles')
+    fetchJson('https://fdnd-agency.directus.app/items/anwb_roles')
   ]).then(([personData, roleData]) => {
     response.render('piket_planner', {
       person: personData.data,
@@ -77,8 +108,8 @@ app.get('/piket_planner', function(request, response) {
 
 app.get('/profiel', function(request, response) {
   Promise.all([
-  fetchJson('https://fdnd-agency.directus.app/items/anwb_persons'),
-  fetchJson('https://fdnd-agency.directus.app/items/anwb_roles')
+    fetchJson('https://fdnd-agency.directus.app/items/anwb_persons'),
+    fetchJson('https://fdnd-agency.directus.app/items/anwb_roles')
   ]).then(([personData, roleData]) => {
     response.render('profiel', {
       person: personData.data,
@@ -88,7 +119,6 @@ app.get('/profiel', function(request, response) {
 })
 
 // 3. Start de webserver
-// Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8000)
 
 // Start express op, haal daarbij het zojuist ingestelde poortnummer op
