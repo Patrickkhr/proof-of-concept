@@ -423,6 +423,9 @@ main.piket_planner .kalender .dagen > a.today .dag {
   color: var(--primary);
   border-left: 1px solid var(--primary);
 }
+.kalender .dagen .event.no-person-assigned {
+  background-color: red;
+}
 /* Kalender END */
 
 /* Piket-overlay Start */
@@ -692,8 +695,3 @@ main.werknemers .container > article:first-of-type > article {
     padding-inline: var(--spacing-1);
   }
 }
-
-.kalender .dagen .event.no-person-assigned {
-  background-color: red;
-}
-
