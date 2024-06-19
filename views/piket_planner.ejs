@@ -65,27 +65,6 @@
       </template>
       <div class="dagen">
       </div>
-      <div id="piket-overlay" class="piket-overlay">
-        <a href="#" class="close-overlay"></a>
-        <form method="post" action="/plan_piket">
-          <label for="eventDate">Vul de datum in</label>
-          <input type="date" name="eventDate" id="eventDate" required>
-          <label for="eventDescription">Selecteer de medewerker</label>
-          <select name="eventDescription" id="eventDescription" required>
-            <% person.forEach(person => { %>
-              <option value="<%= person.name %>"><%= person.name %></option>
-            <% }); %>
-          </select>
-          <label for="roleSelect">Selecteer de rol</label>
-          <select name="roleSelect" id="roleSelect" required>
-            <option value="">Selecteer een rol</option>
-            <% role.forEach(role => { %>
-              <option value="<%= role.id %>"><%= role.role %></option>
-            <% }); %>
-          </select>
-          <button type="submit" id="addEventBtn">Plan piket</button>
-        </form>
-      </div>
     </article>
   </section>
 </main>

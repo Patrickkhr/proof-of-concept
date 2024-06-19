@@ -6,8 +6,8 @@
     <article class="welkom">
       <h1>Welkom, Jeroen</h1>
       <article>
-        <span class="bg-grijs"><h2>1</h2></span>
-        <span class="bg-grijs"><p>U heeft deze week lijn 1.</p></span>
+        <div class="bg-grijs"><h2>1</h2></div>
+        <div class="bg-grijs"><p>U heeft deze week lijn 1.</p></div>
       </article>
       <article>
         <a href="/piket_planner">
@@ -28,14 +28,14 @@
           <h5>Maandag</h5>
           <p>2, Sept - 7, Sept</p>
         </div>
-        <span class="bg-wit"><h3>3</h3></span>
+        <div class="bg-wit"><h3>3</h3></div>
       </div>
       <div class="bg-grijs">
         <div class="">
           <h5>Maandag</h5>
           <p>3, Dec - 8, Dec</p>
         </div>
-        <span class="bg-wit"><h3>2</h3></span>
+        <div class="bg-wit"><h3>2</h3></div>
       </div>
     </article>
     <article class="kalender-buttons">
@@ -93,7 +93,6 @@
           </select>
           <label for="roleSelect">Selecteer de rol</label>
           <select name="roleSelect" id="roleSelect" required>
-            <option value="">Selecteer een rol</option>
             <% role.forEach(role => { %>
               <option value="<%= role.id %>"><%= role.role %></option>
             <% }); %>
