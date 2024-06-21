@@ -4,8 +4,8 @@
 <main class="piket_planner">
   <section class="container">
     <article id="piket-planner">
-      <h1>Plan uw piket.</h1>
-      <form method="post" action="/plan_piket">
+      <h1 id="form-header">Plan uw piket.</h1>
+      <form method="post" action="/plan_piket" id="piket-form">
         <label for="eventDate">Vul de datum in</label>
         <input type="date" name="eventDate" id="eventDate">
         <label for="eventDescription">Selecteer de medewerker</label>
@@ -21,6 +21,13 @@
           <% }); %>
         </select>
         <button type="submit" id="addEventBtn">Plan piket</button>
+      </form>
+      <form method="post" action="/plan_vakantie" id="vakantie-form" style="display: none;">
+        <label for="vakantieDate">Vakantie datum</label>
+        <input type="date" name="vakantieDate" id="vakantieDate">
+        <label for="vakantieDescription">Vakantie beschrijving</label>
+        <input type="text" name="vakantieDescription" id="vakantieDescription">
+        <button type="submit" id="planVakantieBtn">Plan vakantie</button>
       </form>
     </article>
     <article class="kalender-buttons">

@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const todayBtn = document.querySelector(".today"); // Knop om naar vandaag te gaan
   const month = document.querySelector(".month"); // Element voor huidige maand
   const eventDateInput = document.getElementById('eventDate'); // Input voor geselecteerde datum
+  const kalenderSelect = document.getElementById('kalender-select');
+  const piketForm = document.getElementById('piket-form');
+  const vakantieForm = document.getElementById('vakantie-form');
+  const formHeader = document.getElementById('form-header');
 
   const months = ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"];
 
@@ -204,6 +208,19 @@ document.addEventListener("DOMContentLoaded", () => {
     currentMonth = date.getMonth(); // Terug naar huidige maand
     currentYear = date.getFullYear(); // Terug naar huidig jaar
     renderCalendar();
+  });
+
+  kalenderSelect.addEventListener('change', () => {
+    const selectedValue = kalenderSelect.value;
+    if (selectedValue === 'vakantie planning') {
+      piketForm.style.display = 'none';
+      vakantieForm.style.display = 'block';
+      formHeader.textContent = 'Plan uw vakantie';
+    } else {
+      piketForm.style.display = 'block';
+      vakantieForm.style.display = 'none';
+      formHeader.textContent = 'Plan uw piket';
+    }
   });
 
   fetchEvents(); // events ophalen bij het laden van de pagina

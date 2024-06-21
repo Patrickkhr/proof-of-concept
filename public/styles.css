@@ -405,23 +405,23 @@ main.piket_planner .kalender .dagen > a.today .dag {
 }
 .kalender .dagen .event {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   border: 1px solid var(--primary);
   font-size: 10px;
   background: var(--bg-grijs);
 }
 .kalender .dagen .event .event-description {
-  font-size: 12px;
+  font-size: 6px;
   align-content: center;
-  padding-left: 4px;
-  display: none;
+  padding-left: 1px;
   color: var(--black);
 }
 .kalender .dagen .event .piket-lijn {
-  background-color: var(--white);
-  padding: 4px;
+  font-size: 6px;
+  padding: 2px;
   color: var(--primary);
   border-left: 1px solid var(--primary);
+  background-color: var(--white);
 }
 .kalender .dagen .event.no-person-assigned {
   background-color: red;
@@ -524,6 +524,7 @@ main.piket_planner .container > article:first-of-type > form > button {
   border-radius: var(--radius-3);
   color: var(--white);
   cursor: pointer;
+  width: 100%;
 }
 /* END Piket planner pagina */
 
@@ -644,11 +645,13 @@ main.werknemers .container > article:first-of-type > article {
   main.werknemers .container > article:first-of-type > article > div {
     width: calc(100% / 3);
   }
-  .kalender .dagen .event {
-    justify-content: space-between;
-  }
   .kalender .dagen .event .event-description {
-    display: block;
+    font-size: 12px;
+    padding-left: 4px;
+  }
+  .kalender .dagen .event .piket-lijn {
+    font-size: 16px;
+    padding: 4px;
   }
 }
 
